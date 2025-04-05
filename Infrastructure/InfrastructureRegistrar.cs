@@ -1,4 +1,5 @@
 ﻿using Domain.Entities;
+using GenericRepository;
 using Infrastructure.Context;
 using Infrastructure.Options;
 using Infrastructure.Services;
@@ -19,6 +20,8 @@ public static class InfrastructureRegistrar
             string connectionString = configuration.GetConnectionString("SqlServer")!;
             opt.UseSqlServer(connectionString);
         });
+        services.AddScoped<IUnitOfWork>(srv => srv.GetRequiredService<ApplicationDbContext>());
+
         services.Configure<AzureStorageSettings>(configuration.GetSection("AzureStorage"));
         services.Configure<JwtOptions>(configuration.GetSection("Jwt"));
 
