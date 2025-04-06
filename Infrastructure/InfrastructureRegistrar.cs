@@ -1,6 +1,5 @@
 ﻿using Domain.Entities;
 using GenericRepository;
-using Infrastructure.Context;
 using Infrastructure.Options;
 using Infrastructure.Services;
 using Microsoft.AspNetCore.Identity;

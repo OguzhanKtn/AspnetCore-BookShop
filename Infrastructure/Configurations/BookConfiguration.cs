@@ -8,6 +8,7 @@ internal sealed class BookConfiguration : IEntityTypeConfiguration<Book>
 {
     public void Configure(EntityTypeBuilder<Book> builder)
     {
+        builder.HasKey(b => b.Id);
         builder.Property(b => b.Title).IsRequired().HasColumnType("varchar(50)");
         builder.Property(b => b.Description).IsRequired().HasColumnType("varchar(500)");
         builder.Property(b => b.ImageUrl).IsRequired().HasColumnType("varchar(200)");

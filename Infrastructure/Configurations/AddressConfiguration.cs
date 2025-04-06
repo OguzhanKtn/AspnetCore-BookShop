@@ -8,6 +8,7 @@ internal sealed class AddressConfiguration : IEntityTypeConfiguration<Address>
 {
     public void Configure(EntityTypeBuilder<Address> builder)
     {
+        builder.HasKey(x => x.Id);
         builder.Property(x => x.City).HasColumnType("varchar(50)");
         builder.Property(x => x.Town).HasColumnType("varchar(20)");
         builder.Property(x => x.Country).HasColumnType("varchar(50)");

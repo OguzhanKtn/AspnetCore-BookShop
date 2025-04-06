@@ -1,12 +1,11 @@
 ﻿using Domain.Entities;
 using GenericRepository;
-using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
-namespace Infrastructure.Context;
 
-internal sealed class ApplicationDbContext : IdentityDbContext<AppUser,IdentityRole<Guid>,Guid>,IUnitOfWork
+public sealed class ApplicationDbContext : IdentityDbContext<AppUser, IdentityRole<Guid>, Guid>, IUnitOfWork
 {
     public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
     {
