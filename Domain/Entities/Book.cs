@@ -14,5 +14,7 @@ public sealed class Book : Entity
     public Guid AuthorId { get; set; }
     public Author Author { get; set; } = default!;
     public Guid PublisherId { get; set; }
-    public Publisher publisher { get; set; } = default!;
+    public Publisher Publisher { get; set; } = default!;
+
+    public List<Comment>? Comments { get; set; } = new();
 }

@@ -5,7 +5,7 @@ namespace Domain.Entities;
 public sealed class Comment : Entity
 {
     public string Content { get; set; } = default!;
-    public int? ParentCommentId { get; set; }
+    public Guid? ParentCommentId { get; set; }
     public Guid BookId { get; set; }
     public Book Book { get; set; } = default!;
     public Guid UserId { get; set; }
